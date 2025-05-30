@@ -15,7 +15,7 @@ h1 {
   font-size: 2.5em;
   color: #8c7aa9;
   position: absolute;
-  top: 20px; /* Mais perto do topo */
+  top: 15px; /* Mais perto do topo */
 }
 
 #contador {
