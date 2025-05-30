@@ -1,14 +1,31 @@
-// 1. Variável para armazenar a contagem
 let cliques = 0;
 
-// 2. Seleciona os elementos da página
+// Lista de flores emoji
+const flores = ["🌸", "🌼", "🌻", "🌷", "🌹", "💐", "🌺"];
+let florAtual = null; // Para evitar repetir a mesma flor
+
+// Elementos da página
 const botao = document.getElementById('botaoClique');
-const areaContador = document.getElementById('contador');
+const contador = document.getElementById('contador');
+const flor = document.getElementById('flor');
 
-// 3. Adiciona o evento de clique ao botão
-botao.addEventListener('click', function () {
-  // 4. Incrementa o valor e atualiza o contador
+// Função de clique
+botao.addEventListener('click', () => {
   cliques++;
-  areaContador.textContent = cliques;
-});
+  contador.textContent = cliques;
 
+  // Escolher uma flor diferente da anterior
+  let novaFlor;
+  do {
+    novaFlor = flores[Math.floor(Math.random() * flores.length)];
+  } while (novaFlor === florAtual);
+
+  florAtual = novaFlor;
+  flor.textContent = novaFlor;
+
+  // Animação leve (aumenta e volta ao normal)
+  flor.style.transform = "scale(1.3)";
+  setTimeout(() => {
+    flor.style.transform = "scale(1)";
+  }, 150);
+});
