@@ -14,7 +14,7 @@ body {
 h1 {
   font-size: 2em;
   color: #8c7aa9;
-  position: absolute;
+  position:fixed
   top: 5px; /* Mais perto do topo */
 }
 
